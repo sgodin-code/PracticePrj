@@ -1,28 +1,28 @@
 name: Test & Deploy Project
-  on: push
-  jobs:
-    lint:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Get Code
-          run: actions/checkout@v3
-        - name: Run lint
-          run: npm run lint
-    tests:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Get Code
-          run: actions/checkout@v3
-        - name: Run tests
-          run: npm run test
-    buildndeploy:
-        needs: [lint, tests]
-        runs-on: ubuntu-latest
-        steps:
-          - name: Get Code
-            run: actions/checkout@v3
-          - name: Run build
-            run: npm run build
-          - name: Deploy
-            run: echo "Deploying...."
-        
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        run: actions/checkout@v3
+      - name: Run lint
+        run: npm run lint
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        run: actions/checkout@v3
+      - name: Run tests
+        run: npm run test
+  buildndeploy:
+    needs: [lint, tests]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        run: actions/checkout@v3
+      - name: Run build
+        run: npm run build
+      - name: Deploy
+        run: echo "Deploying...."
+      
