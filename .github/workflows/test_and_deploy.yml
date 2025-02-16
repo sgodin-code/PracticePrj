@@ -7,14 +7,14 @@ jobs:
       - name: Get Code
         run: actions/checkout@v3
       - name: Run lint
-        run: npm run lint
+        run: npm lint
   tests:
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
         run: actions/checkout@v3
       - name: Run tests
-        run: npm run test
+        run: npm test
   buildndeploy:
     needs: [lint, tests]
     runs-on: ubuntu-latest
