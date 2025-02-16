@@ -1,0 +1,13 @@
+name: Recveiced Issue
+on: 
+  issues:
+    types:
+      - opened
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: report_issue
+        run: |
+          echo "${{ toJSON( github )}}"
+          echo "${{ github.event.issue }}"

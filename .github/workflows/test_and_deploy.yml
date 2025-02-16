@@ -9,7 +9,7 @@ jobs:
     #   - name: Run lint
     #     run: npm lint
       - name: Lint
-        run: "Linting..."
+        run: echo "Linting..."
   tests:
     runs-on: ubuntu-latest
     steps:
